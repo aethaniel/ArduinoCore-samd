@@ -219,3 +219,18 @@ void SERCOM5_Handler()
   Serial.IrqHandler();
 }
 
+#if WIRE_INTERFACES_COUNT > 0
+
+TwoWire Wire(&sercom3);
+
+void SERCOM3_Handler(void) {
+  Wire.onService();
+}
+
+#endif // WIRE_INTERFACES_COUNT > 0
+
+#if SPI_INTERFACES_COUNT > 0
+
+SPIClass SPI( &sercom4, PIN_SPI_MISO, PIN_SPI_SCK, PIN_SPI_MOSI );
+
+#endif // SPI_INTERFACES_COUNT > 0

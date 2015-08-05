@@ -174,6 +174,23 @@ extern SERCOM sercom5;
 extern Uart Serial;
 extern Uart Serial1;
 
+#if WIRE_INTERFACES_COUNT > 0
+
+#include "Wire.h"
+
+extern TwoWire Wire;
+
+#endif // WIRE_INTERFACES_COUNT > 0
+
+
+#if SPI_INTERFACES_COUNT > 0
+
+#include "SPI.h"
+
+extern SPIClass SPI;
+
+#endif // SPI_INTERFACES_COUNT > 0
+
 #endif
 
 // These serial port names are intended to allow libraries and architecture-neutral
@@ -196,6 +213,8 @@ extern Uart Serial1;
 // Serial has no physical pins broken out, so it's not listed as HARDWARE port
 #define SERIAL_PORT_HARDWARE        Serial1
 #define SERIAL_PORT_HARDWARE_OPEN   Serial1
+
+
 
 #endif /* _VARIANT_ARDUINO_ZERO_ */
 

@@ -99,6 +99,4 @@ class TwoWire : public Stream
     //static const uint32_t XMIT_TIMEOUT = 100000;
 };
 
-extern TwoWire Wire;
-
 #endif

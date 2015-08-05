@@ -196,5 +196,3 @@ void SPIClass::attachInterrupt() {
 void SPIClass::detachInterrupt() {
   // Should be disableInterrupt()
 }
-
-SPIClass SPI( &sercom4, PIN_SPI_MISO, PIN_SPI_SCK, PIN_SPI_MOSI );
